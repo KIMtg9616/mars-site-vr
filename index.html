@@ -72,11 +72,11 @@
         }
         
         .landed-rocket-base {
-            position: absolute; right: 22%; bottom: 12%; 
+            position: absolute; right: 50%; bottom: 25%; 
             display: flex; flex-direction: column; align-items: center; z-index: 1; 
         }
         .landed-rocket-body {
-            font-size: 95px; filter: drop-shadow(0 0 20px rgba(255,140,0,0.4));
+            font-size: 200px; filter: drop-shadow(0 0 20px rgba(255,140,0,0.4)); /* 기본 폰트사이즈 95px */
             transform: rotate(-45deg); 
             animation: rocketVibration 0.05s infinite alternate;
             position: relative;
@@ -91,9 +91,9 @@
         /* [수정] 불꽃 컨테이너와 입자를 로켓 몸통 아래로 대폭 하향 조정 */
         .thruster-fire-container {
             position: absolute; 
-            bottom: -80px; /* 기존 -35px에서 -80px로 내려서 로켓 하단에 완전히 맞춤 */
-            left: 50%; transform: translateX(-50%);
-            width: 80px; height: 120px; pointer-events: none;
+            bottom: -120px; /* 기존 -35px에서 -80px로 내려서 로켓 하단에 완전히 맞춤 */
+            left: 55%; transform: translateX(-50%);
+            width: 150px; height: 250px; pointer-events: none;
             z-index: 2;
         }
         .flame-particle {
@@ -105,19 +105,19 @@
             animation: flameBurnLoop 0.4s infinite linear; opacity: 0;
             mix-blend-mode: screen; filter: blur(2px);
         }
-        .f-p1 { width: 24px; height: 70px; animation-delay: 0s; }
-        .f-p2 { width: 34px; height: 95px; animation-delay: 0.12s; margin-left: -3px; }
-        .f-p3 { width: 20px; height: 60px; animation-delay: 0.24s; margin-left: 3px; }
+        .f-p1 { width: 45px; height: 140px; animation-delay: 0s; }
+        .f-p2 { width: 65px; height: 190px; animation-delay: 0.12s; margin-left: -3px; }
+        .f-p3 { width: 40px; height: 120px; animation-delay: 0.24s; margin-left: 3px; }
         
         @keyframes flameBurnLoop {
             0% { transform: translateX(-50%) translateY(0) scaleX(1) scaleY(1); opacity: 1; filter: blur(1px); }
-            50% { transform: translateX(-50%) translateY(35px) scaleX(0.8) scaleY(0.9); opacity: 0.9; }
-            100% { transform: translateX(-50%) translateY(80px) scaleX(0.2) scaleY(0.5); opacity: 0; filter: blur(6px); }
+            50% { transform: translateX(-50%) translateY(70px) scaleX(0.8) scaleY(0.9); opacity: 0.9; }
+            100% { transform: translateX(-50%) translateY(160px) scaleX(0.2) scaleY(0.5); opacity: 0; filter: blur(6px); }
         }
         /* 화성 레골리스 연기 파티클 시스템 */
         .smoke-particle {
-            position: absolute; bottom: 30px; border-radius: 50%;
-            background: rgba(140, 45, 22, 0.4); filter: blur(12px);
+            position: absolute; bottom: 100px; border-radius: 50%;
+            background: rgba(221, 221, 217, 0.8); filter: blur(5px);
             animation: smokeDriftLoop 1.2s infinite ease-out; opacity: 0;
         }
         .s-p1 { width: 50px; height: 50px; left: -25px; animation-delay: 0s; --driftX: -50px; }
