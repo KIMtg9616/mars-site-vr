@@ -275,8 +275,8 @@
         <button class="keypad-btn" onpointerdown="keypadState.down=true" onpointerup="keypadState.down=false" onpointerleave="keypadState.down=false">▼</button>
         <div></div>
     </div>
-
-     <a-scene id="scene" style="display: none;" fog="type: exponential; color: #db8d5c; density: 0.015;" vr-mode-ui="enabled: false;">
+/* 기본 scene color: #db8d5c; density: 0.015 */
+     <a-scene id="scene" style="display: none;" fog="type: exponential; color: #d3a085; density: 0.008;" vr-mode-ui="enabled: false;">
         <a-sky id="sky" color="#e67e22"></a-sky>
         <a-plane rotation="-90 0 0" width="1000" height="1000" color="#7a3a1e"></a-plane>
 
@@ -615,7 +615,7 @@
 
     if (mode === 'day') {
         sky.setAttribute('color', '#87CEEB'); // 낮 하늘색으로 변경 (기존 #070512)
-        sceneEl.setAttribute('fog', 'color: #d3a085; density: 0.005');
+        sceneEl.setAttribute('fog', 'color: #d3a085; density: 0.008');
         if (sunVisual) sunVisual.setAttribute('visible', 'true');
         
         // [수정 포인트] 낮에는 별을 보이지 않게 처리
@@ -623,7 +623,7 @@
         
     } else if (mode === 'night') {
         sky.setAttribute('color', '#010105'); 
-        sceneEl.setAttribute('fog', 'color: #0d0a1a; density: 0.003'); 
+        sceneEl.setAttribute('fog', 'color: #0d0a1a; density: 0.033'); 
         if (sunVisual) sunVisual.setAttribute('visible', 'false');
         
         // [수정 포인트] 밤에는 별이 보이게 처리
